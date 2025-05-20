@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovasi Teknologi Pembakaran</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: var(--secondary);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        nav button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav button:hover, nav button.active {
+            background-color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-container figcaption {
+            font-style: italic;
+            margin-top: 0.5rem;
+            color: #666;
+        }
+        
+        .tech-card {
+            background-color: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .tech-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav button {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            .page {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INOVASI TEKNOLOGI PEMBAKARAN</h1>
+        <p>Media Pembelajaran Interaktif tentang Mesin Pembakaran Dalam</p>
+    </header>
+    
+    <nav>
+        <button class="nav-btn active" data-page="page1">Motor Bakar</button>
+        <button class="nav-btn" data-page="page2">Motor 2 Langkah</button>
+        <button class="nav-btn" data-page="page3">Pembakaran Efisien</button>
+        <button class="nav-btn" data-page="page4">Pengendalian Katup</button>
+    </nav>
+    
+    <div class="container">
+        <!-- Page 1: Motor Bakar -->
+        <div id="page1" class="page active">
+            <h2>Motor Bakar (Internal Combustion Engine)</h2>
+            
+            <p>Motor bakar merupakan jenis mesin kalor yang mengubah energi kimia dari bahan bakar menjadi energi mekanik melalui proses pembakaran. Proses ini terjadi di dalam mesin itu sendiri, menjadikannya sebagai mesin pembakaran dalam.</p>
+            
+            <div class="image-container">
+                <img src="motor_pembakaran.jpeg" alt="Sistem Pembakaran Dalam">
+                <figcaption>Gambar 1. Sepeda motor dengan sistem pembakaran dalam</figcaption>
+            </div>
+            
+            <h3>Perbedaan Mesin Pembakaran Dalam dan Luar</h3>
+            <ul>
+                <li><strong>Mesin Pembakaran Dalam (Internal Combustion Engine):</strong> Proses pembakaran terjadi di dalam mesin, contoh: motor bensin, motor diesel.</li>
+                <li><strong>Mesin Pembakaran Luar (External Combustion Engine):</strong> Proses pembakaran terjadi di luar mesin, contoh: mesin uap.</li>
+            </ul>
+            
+            <h3>Jenis Motor Bakar Berdasarkan Sistem Penyalaan</h3>
+            <ol>
+                <li><strong>Motor Bensin (Spark Ignition Engine):</strong> Menggunakan busi untuk menyalakan campuran udara dan bahan bakar.</li>
+                <li><strong>Motor Diesel (Compression Ignition Engine):</strong> Menggunakan kompresi tinggi untuk menyalakan bahan bakar.</li>
+            </ol>
+            
+            <h3>Bagian-Bagian Utama Motor 4 Langkah</h3>
+            <div class="image-container">
+                <img src="motor_4_langkah.jpeg" alt="Bagian-bagian mesin motor 4 langkah">
+                <figcaption>Gambar 2. Bagian-bagian mesin motor 4 langkah</figcaption>
+            </div>
+            
+            <ul>
+                <li><strong>Silinder:</strong> Tempat berlangsungnya pembakaran</li>
+                <li><strong>Torak (Piston):</strong> Menerima tekanan pembakaran dan meneruskannya ke poros engkol</li>
+                <li><strong>Batang Torak:</strong> Menghubungkan torak dengan poros engkol</li>
+                <li><strong>Poros Engkol:</strong> Mengubah gerak naik-turun piston menjadi gerak putar</li>
+                <li><strong>Mekanisme Katup:</strong> Mengatur aliran udara dan gas buang</li>
+            </ul>
+        </div>
+        
+        <!-- Page 2: Motor 2 Langkah -->
+        <div id="page2" class="page">
+            <h2>Motor 2 Langkah</h2>
+            
+            <p>Pada motor bensin 2 langkah, siklus kerja terjadi dalam dua langkah piston (naik dan turun), berbeda dengan motor 4 langkah yang membutuhkan empat langkah piston untuk satu siklus lengkap.</p>
+            
+            <div class="image-container">
+                <img src="motor_2_langkah.jpeg" alt="Bagian-bagian mesin motor 2 langkah">
+                <figcaption>Gambar 3. Bagian-bagian mesin motor 2 langkah</figcaption>
+            </div>
+            
+            <h3>Prinsip Kerja Motor 2 Langkah</h3>
+            
+            <div class="tech-card">
+                <h4>1. Langkah Hisap dan Kompresi</h4>
+                <ul>
+                    <li>Piston bergerak dari TMA ke TMB</li>
+                    <li>Di dalam crankcase terjadi kompresi campuran bensin-udara</li>
+                    <li>Gas sisa pembakaran mulai terbuang melalui saluran buang</li>
+                    <li>Ketika saluran bilas terbuka, campuran baru masuk ke ruang bakar</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h4>2. Langkah Kerja dan Buang</h4>
+                <ul>
+                    <li>Piston bergerak dari TMB ke TMA akibat ledakan</li>
+                    <li>Saluran bilas dan buang tertutup, terjadi kompresi</li>
+                    <li>Busi memercikkan api untuk membakar campuran</li>
+                    <li>Di bawah piston, bahan bakar baru masuk ke crankcase</li>
+                </ul>
+            </div>
+            
+            <h3>Perbedaan Motor 2 Langkah dan 4 Langkah</h3>
+            <table>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Motor 2 Langkah</th>
+                    <th>Motor 4 Langkah</th>
+                </tr>
+                <tr>
+                    <td>Siklus Kerja</td>
+                    <td>2 langkah piston (1 putaran poros engkol)</td>
+                    <td>4 langkah piston (2 putaran poros engkol)</td>
+                </tr>
+                <tr>
+                    <td>Katup</td>
+                    <td>Tidak menggunakan katup, hanya saluran</td>
+                    <td>Menggunakan mekanisme katup</td>
+                </tr>
+                <tr>
+                    <td>Pelumasan</td>
+                    <td>Mencampur oli dengan bahan bakar</td>
+                    <td>Sistem pelumasan terpisah</td>
+                </tr>
+                <tr>
+                    <td>Emisi</td>
+                    <td>Lebih tinggi karena pembakaran tidak sempurna</td>
+                    <td>Lebih rendah karena pembakaran lebih sempurna</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Page 3: Pembakaran Efisien -->
+        <div id="page3" class="page">
+            <h2>Teknologi Pembakaran Efisien</h2>
+            
+            <p>Berbagai teknologi telah dikembangkan untuk meningkatkan efisiensi pembakaran dan mengurangi emisi CO₂ pada mesin pembakaran dalam.</p>
+            
+            <div class="tech-card">
+                <h4>1. Direct Injection (Injeksi Langsung)</h4>
+                <p>Bahan bakar langsung disemprotkan ke dalam ruang bakar pada saat kompresi, menghasilkan pembakaran yang lebih efisien.</p>
+                
+                <div class="image-container">
+                    <img src="direct_injection.jpeg" alt="Sistem Direct Injection">
+                    <figcaption>Gambar 4. Sistem Direct Injection</figcaption>
+                </div>
+                
+                <p><strong>Keuntungan:</strong></p>
+                <ul>
+                    <li>Peningkatan efisiensi bahan bakar hingga 15-20%</li>
+                    <li>Penurunan emisi gas buang</li>
+                    <li>Tenaga yang lebih besar dengan konsumsi bahan bakar lebih rendah</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h4>2. Turbocharging dan Downsizing</h4>
+                <p>Menggunakan energi kinetik dari gas buang untuk memutar turbin yang mengkompresi udara masuk, memungkinkan mesin kecil menghasilkan tenaga setara mesin besar.</p>
+                
+                <p><strong>Prinsip Kerja:</strong></p>
+                <ol>
+                    <li>Gas buang memutar turbin</li>
+                    <li>Turbin menggerakkan kompresor</li>
+                    <li>Kompresor menekan udara masuk ke ruang bakar</li>
+                    <li>Lebih banyak bahan bakar dapat dibakar, menghasilkan tenaga lebih besar</li>
+                </ol>
+                
+                <p><strong>Keuntungan:</strong></p>
+                <ul>
+                    <li>Konsumsi bahan bakar lebih hemat</li>
+                    <li>Emisi CO₂ lebih rendah</li>
+                    <li>Performa setara mesin besar dengan ukuran lebih kecil</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h4>3. Supercharging</h4>
+                <p>Mirip dengan turbocharging tetapi digerakkan langsung oleh mesin melalui sabuk atau roda gigi, memberikan respons yang lebih instan tanpa turbo lag.</p>
+                
+                <p><strong>Perbandingan dengan Turbocharging:</strong></p>
+                <ul>
+                    <li><strong>Supercharger:</strong> Respons lebih cepat, tetapi mengurangi efisiensi bahan bakar</li>
+                    <li><strong>Turbocharger:</strong> Ada sedikit delay (turbo lag), tetapi lebih efisien</li>
+                </ul>
+            </div>
+            
+            <h3>Dampak Teknologi Pembakaran Efisien terhadap Lingkungan</h3>
+            <p>Penerapan teknologi-teknologi ini telah berkontribusi dalam:</p>
+            <ul>
+                <li>Penurunan emisi CO₂ hingga 30% pada kendaraan modern</li>
+                <li>Pengurangan konsumsi bahan bakar fosil</li>
+                <li>Peningkatan efisiensi energi mesin pembakaran dalam</li>
+            </ul>
+        </div>
+        
+        <!-- Page 4: Pengendalian Katup -->
+        <div id="page4" class="page">
+            <h2>Teknologi Pengendalian Katup</h2>
+            
+            <p>Teknologi pengendalian katup modern memungkinkan pengaturan waktu dan durasi bukaan katup secara dinamis untuk meningkatkan efisiensi mesin.</p>
+            
+            <div class="tech-card">
+                <h4>1. Variable Valve Timing (VVT)</h4>
+                <p>Sistem yang mengatur waktu buka/tutup katup secara dinamis sesuai kebutuhan mesin, meningkatkan efisiensi bahan bakar dan menurunkan emisi.</p>
+                
+                <div class="image-container">
+                    <img src="vvt.jpeg" alt="Sistem Variable Valve Timing">
+                    <figcaption>Gambar 5. Sistem Variable Valve Timing</figcaption>
+                </div>
+                
+                <p><strong>Implementasi oleh Produsen:</strong></p>
+                <ul>
+                    <li><strong>VVT-i (Toyota):</strong> Variable Valve Timing with intelligence</li>
+                    <li><strong>i-VTEC (Honda):</strong> Intelligent Variable Valve Timing and Lift Electronic Control</li>
+                    <li><strong>VarioCam (Porsche):</strong> Sistem pengaturan katup canggih untuk mesin performa tinggi</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h4>2. Cylinder Deactivation</h4>
+                <p>Teknologi yang menonaktifkan beberapa silinder saat beban mesin ringan, mengurangi konsumsi bahan bakar dan emisi CO₂.</p>
+                
+                <p><strong>Contoh Implementasi:</strong></p>
+                <table>
+                    <tr>
+                        <th>Produsen</th>
+                        <th>Nama Teknologi</th>
+                        <th>Contoh Mobil</th>
+                        <th>Konfigurasi</th>
+                    </tr>
+                    <tr>
+                        <td>General Motors</td>
+                        <td>Active Fuel Management (AFM)</td>
+                        <td>Chevrolet Silverado</td>
+                        <td>V8 menjadi V4</td>
+                    </tr>
+                    <tr>
+                        <td>Honda</td>
+                        <td>Variable Cylinder Management (VCM)</td>
+                        <td>Honda Accord V6</td>
+                        <td>V6 menjadi V3</td>
+                    </tr>
+                    <tr>
+                        <td>Chrysler</td>
+                        <td>Multi-Displacement System (MDS)</td>
+                        <td>Dodge Charger</td>
+                        <td>V8 menjadi V4</td>
+                    </tr>
+                    <tr>
+                        <td>Volkswagen</td>
+                        <td>Active Cylinder Management (ACT)</td>
+                        <td>VW Golf 1.4 TSI</td>
+                        <td>4 silinder menjadi 2</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Manfaat Teknologi Pengendalian Katup</h3>
+            <ul>
+                <li>Peningkatan efisiensi bahan bakar hingga 10-15%</li>
+                <li>Pengurangan emisi gas buang</li>
+                <li>Performa mesin yang lebih baik di berbagai kondisi operasi</li>
+                <li>Pengurangan getaran dan kebisingan mesin</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Media Pembelajaran Interaktif - Inovasi Teknologi Pembakaran</p>
+        <p>Disusun oleh: Muhammad Yusuf Husaini, Faizal Nur Madjid, Akmal Zaki Priambodo, Fajar Shaefudin, Alprialex Lolo</p>
+        <p>Universitas Negeri Semarang</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const pages = document.querySelectorAll('.page');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and pages
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    pages.forEach(page => page.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding page
+                    const pageId = this.getAttribute('data-page');
+                    document.getElementById(pageId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
